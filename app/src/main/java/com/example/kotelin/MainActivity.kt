@@ -14,15 +14,28 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
+import androidx.compose.ui.res.painterResource
 import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shadow
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -56,54 +69,67 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Iniciar(navController: NavHostController) {
 
+    // val image: Painter = painterResource(id = )
+
+    LaunchedEffect(Unit) {
+        kotlinx.coroutines.delay(3000L)
+        navController.navigate("Tela 02")
+    }
+
     Column(
-        modifier = Modifier.fillMaxSize().background(Color.Black),
+        modifier = Modifier.fillMaxSize().background(Color.Red),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally,
-
     ) {
-        Text("Seja bem-vindo",
-        fontSize = 30.sp,
-        color = Color.Gray,
-        textAlign = TextAlign.Center,
-        modifier = Modifier.padding(horizontal = 16.dp)
-        )
 
-        Text(
-            text = "Descubra e organize eventos",
-            fontSize = 18.sp,
-            color = Color.Gray,
-            textAlign = TextAlign.Center,
-            modifier = Modifier.padding(horizontal = 16.dp)
+        /*
+        Image(
+            painter = image,
+            contentDescription = "Descrição da imagem",
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp) // Defina o tamanho da imagem
         )
-        Text(
-            text = "incríveis perto de você.",
-            fontSize = 18.sp,
-            color = Color.Gray,
-            textAlign = TextAlign.Center,
-            modifier = Modifier.padding(horizontal = 16.dp)
-        )
+        */
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Button(
-            onClick = {
-                try {
-                    navController.navigate("Tela 02")
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-            },
+        Text(
+            text = "AGENDA",
+            fontSize = 72.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.Red,
+            style = TextStyle(
+                shadow = Shadow(
+                    color = Color.Red,
+                    offset = Offset(2f, 1f),
+                )
+            ),
             modifier = Modifier
-                .fillMaxWidth()
-                .height(55.dp)
-                .padding(horizontal = 16.dp),
-            colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFE53935))
-        ) {
-            Text("Entrar", fontSize = 18.sp, color = Color.White)
-        }
+                .background(
+                    Brush.linearGradient(
+                        colors = listOf(Color.White, Color.White)
+                    ),
+                    shape = RoundedCornerShape(10.dp)
+                )
+                .padding(18.dp,6.dp),
+            textAlign = TextAlign.Center
+        )
 
-
+        Text(
+            text = "DE EVENTOS",
+            fontSize = 46.sp,
+            fontWeight = FontWeight.Bold,
+            color = Color.White,
+            style = TextStyle(
+                shadow = Shadow(
+                    color = Color.Red,
+                    offset = Offset(2f, 1f),
+                )
+            ),
+            modifier = Modifier.padding(4.dp),
+            textAlign = TextAlign.Center
+        )
     }
-
 }
+
