@@ -1,5 +1,4 @@
-package com.example.kotelin.ui.theme.Model
-
+package com.example.kotelin.model
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
@@ -7,17 +6,18 @@ import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
-@Dao
-interface EventoDao {
-    @Insert
-    suspend fun inserirEvento(evento: Evento)
 
-    @Query("SELECT * FROM eventos ORDER BY dataHora")
-    fun listarEventos(): Flow<List<Evento>>
+@Dao
+interface ParticipanteDao {
+    @Query("SELECT * FROM participantes")
+    fun listarParticipantes(): Flow<List<Participante>>
+
+    @Insert
+    suspend fun inserirParticipante(participante: Participante)
 
     @Update
-    suspend fun atualizarEvento(evento: Evento)
+    suspend fun atualizarParticipante(participante: Participante)
 
     @Delete
-    suspend fun deletarEvento(evento: Evento)
+    suspend fun deletarParticipante(participante: Participante)
 }
