@@ -1,4 +1,4 @@
-package com.example.kotelin
+package com.example.agendinha2
 
 import org.junit.Test
 

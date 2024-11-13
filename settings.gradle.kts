@@ -10,14 +10,7 @@ pluginManagement {
         mavenCentral()
         gradlePluginPortal()
     }
-    plugins {
-        // Definindo as versões dos plugins
-        id("com.android.application") version "8.6.0"
-        id("org.jetbrains.kotlin.android") version "1.9.0"
-        id("org.jetbrains.kotlin.kapt") version "1.9.0"
-    }
 }
-
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
@@ -26,5 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Kotelin"
+rootProject.name = "Agendinha2"
 include(":app")
+ 

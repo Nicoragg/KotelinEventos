@@ -4,11 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.kotelin.model.Participante
-import com.example.kotelin.model.ParticipanteDao
+import com.example.agendinha2.model.Evento
+import com.example.agendinha2.model.EventoDao
+import com.example.agendinha2.model.Participante
+import com.example.agendinha2.model.ParticipanteDao
 
-import com.example.kotelin.ui.theme.Model.Evento
-import com.example.kotelin.ui.theme.Model.EventoDao
 
 @Database(entities = [Evento::class, Participante::class], version = 1)
 abstract class AppDatabase : RoomDatabase() {

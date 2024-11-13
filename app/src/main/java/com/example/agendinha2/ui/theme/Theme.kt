@@ -1,4 +1,4 @@
-package com.example.kotelin.ui.theme
+package com.example.agendinha2.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -34,7 +34,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun KotelinTheme(
+fun Agendinha2Theme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

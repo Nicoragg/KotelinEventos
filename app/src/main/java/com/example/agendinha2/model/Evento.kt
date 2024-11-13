@@ -1,4 +1,4 @@
-package com.example.kotelin.ui.theme.Model
+package com.example.agendinha2.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
