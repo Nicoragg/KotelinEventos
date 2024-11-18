@@ -1,4 +1,4 @@
-package com.example.agendinha2
+package com.example.agendadeeventos
 
 import org.junit.Test
 

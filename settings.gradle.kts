@@ -19,6 +19,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "Agendinha2"
+rootProject.name = "AgendaDeEventos"
 include(":app")
- 

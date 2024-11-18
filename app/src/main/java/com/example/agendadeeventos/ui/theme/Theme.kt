@@ -1,4 +1,4 @@
-package com.example.agendinha2.ui.theme
+package com.example.agendadeeventos.ui.theme
 
 import android.app.Activity
 import android.os.Build
@@ -34,7 +34,7 @@ private val LightColorScheme = lightColorScheme(
 )
 
 @Composable
-fun Agendinha2Theme(
+fun AgendaDeEventosTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,

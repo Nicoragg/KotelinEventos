@@ -1,17 +1,16 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.example.agendinha2"
-    compileSdk = 34
+    namespace = "com.example.agendadeeventos"
+    compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.agendinha2"
-        minSdk = 33
-        targetSdk = 34
+        applicationId = "com.example.agendadeeventos"
+        minSdk = 23
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -31,11 +30,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -51,25 +50,31 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.10.1")
-    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1")
-    implementation("androidx.activity:activity-compose:1.7.2")
-    implementation(platform("androidx.compose:compose-bom:2024.01.00"))
-    implementation("androidx.compose.ui:ui:1.5.1")
-    implementation("androidx.compose.ui:ui-graphics:1.5.1")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.5.1")
-    implementation("androidx.compose.material3:material3:1.2.0-alpha03")
-    implementation("androidx.navigation:navigation-compose:2.5.3")
-    implementation(libs.androidx.ui.test.android)
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-    androidTestImplementation(platform("androidx.compose:compose-bom:2024.01.00"))
-    kapt("androidx.room:room-compiler:2.5.0")
-    debugImplementation("androidx.compose.ui:ui-tooling:1.5.1")
-    debugImplementation("androidx.compose.ui:ui-test-manifest:1.5.1")
-    implementation("androidx.room:room-runtime:2.5.0")
-    implementation("androidx.room:room-ktx:2.5.0")
-    implementation("androidx.room:room-compiler:2.5.0")
-    testImplementation("androidx.room:room-testing:2.5.0")
+    // Core libraries
+    implementation(libs.androidx.core.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+
+    // Activity Compose support
+    implementation(libs.androidx.activity.compose)
+
+    // Compose BOM and libraries
+    implementation(platform(libs.androidx.compose.bom)) // Usa a BOM para definir as versões do Compose
+    implementation(libs.androidx.ui) // UI do Compose
+    implementation(libs.androidx.ui.graphics) // Gráficos no Compose
+    implementation(libs.androidx.ui.tooling.preview) // Ferramentas de visualização no Compose
+    implementation(libs.androidx.material3) // Material 3
+
+    // Navigation for Compose
+    implementation("androidx.navigation:navigation-compose:2.6.0") // Navegação para Compose
+
+    // Testing libraries
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom)) // Usa o BOM para testes
+    androidTestImplementation(libs.androidx.ui.test.junit4) // Testes para Compose
+
+    // Debugging tools
+    debugImplementation(libs.androidx.ui.tooling) // Ferramentas de depuração
+    debugImplementation(libs.androidx.ui.test.manifest) // Testes de manifestos do Compose
 }
