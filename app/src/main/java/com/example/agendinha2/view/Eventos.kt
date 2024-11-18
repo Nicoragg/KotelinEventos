@@ -1,6 +1,5 @@
 package com.example.agendinha2.view
 
-import com.example.agendinha2.model.Evento
 import kotlin.apply
 
 @androidx.compose.runtime.Composable
